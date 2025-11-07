@@ -1,6 +1,6 @@
 import './App.css'
-import phrases from './utils/phrases'
-import bgArr from './utils/bgArr'
+import phrases from './utils/phrases.json'
+import bgArr from './utils/bgArr.json'
 import { useState } from 'react'
 import getRandomFromArr from './services/getRandomFromArr'
 import Phrase from './components/Phrases'

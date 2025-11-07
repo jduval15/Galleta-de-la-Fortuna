@@ -35,13 +35,21 @@ max-width: 400px;
     transition: font-size 100ms ease;
 }
 
-.app__btn :hover{
+.app__btn:hover{
     font-size: 1.1rem;
 
 }
 
 .app__phrase{
     font-weight: 300;
+    margin-bottom: 1em;
+}
+
+.app__author{
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+    color: #333;
 }
 
 @media (min-width: 500px) {

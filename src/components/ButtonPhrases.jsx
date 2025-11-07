@@ -4,10 +4,10 @@ import bgArr from '../utils/bgArr.json'
 
 const ButtonPhrase = ({ setPhraseRandom, setBgApp }) => {
 
-    const handleChangePhrase = ({}) => {
+    const handleChangePhrase = () => {
         const quote = getRandomFromArr(phrases)
         setPhraseRandom(quote)
-        setBgApp(getRandomFromArr([1, 2, 3, 4, 5, 6, 7, 8]))
+        setBgApp(getRandomFromArr(bgArr))
 
     }
 
