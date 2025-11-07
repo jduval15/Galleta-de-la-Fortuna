@@ -24,10 +24,10 @@ function App() {
   
   
   return (
-    <div style={objStyle} className='app'>
+    <main style={objStyle} className='app' role="main">
       <h1 className='app__tittle'>Fortune Cookie</h1>
-      <article className='app__card'>
-      <Phrase 
+      <article className='app__card' role="article" aria-label="Fortune cookie message">
+      <Phrase
       phraseRandom = {phraseRandom}
       />
       < ButtonPhrase
@@ -35,9 +35,9 @@ function App() {
       setBgApp = {setBgApp}
       />
       </article>
-    </div>
-    
-    
+    </main>
+
+
   )
 }
 

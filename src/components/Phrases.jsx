@@ -1,13 +1,15 @@
-
+import { memo } from 'react'
 
 const Phrase = ({ phraseRandom }) => {
 
     return (
-        <div>
-            <p className="app__phrase">{phraseRandom.phrase}</p>
-            <p className="app__author">- {phraseRandom.author}</p>
+        <div className="phrase-container" key={phraseRandom.phrase} aria-live="polite">
+            <blockquote className="app__phrase">
+                {phraseRandom.phrase}
+            </blockquote>
+            <cite className="app__author">- {phraseRandom.author}</cite>
         </div>
     )
 }
 
-export default Phrase
+export default memo(Phrase)
