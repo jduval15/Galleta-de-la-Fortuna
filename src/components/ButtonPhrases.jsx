@@ -1,21 +1,26 @@
+import { memo, useCallback } from 'react'
 import getRandomFromArr from "../services/getRandomFromArr"
 import phrases from '../utils/phrases.json'
 import bgArr from '../utils/bgArr.json'
 
 const ButtonPhrase = ({ setPhraseRandom, setBgApp }) => {
 
-    const handleChangePhrase = ({}) => {
+    const handleChangePhrase = useCallback(() => {
         const quote = getRandomFromArr(phrases)
         setPhraseRandom(quote)
-        setBgApp(getRandomFromArr([1, 2, 3, 4, 5, 6, 7, 8]))
-
-    }
+        setBgApp(getRandomFromArr(bgArr))
+    }, [setPhraseRandom, setBgApp])
 
     return (
-
-    
-    <button className="app__btn" onClick = {handleChangePhrase} >Other</button>
+    <button
+        className="app__btn"
+        onClick={handleChangePhrase}
+        aria-label="Get new fortune cookie message"
+        type="button"
+    >
+        Get New Fortune
+    </button>
     )
 }
 
-export default ButtonPhrase
+export default memo(ButtonPhrase)

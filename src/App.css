@@ -15,6 +15,22 @@
     left: 50%;
     transform: translate(-50%);
     text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 .app__card{
@@ -23,6 +39,29 @@ padding: 1.5em 2em;
 border-radius: 0.8em;
 width: 100%;
 max-width: 400px;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10px);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app__card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.phrase-container{
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .app__btn{
@@ -32,21 +71,94 @@ max-width: 400px;
     padding: 0.8em 2em;
     font-size: 1rem;
     border-radius: 2em;
-    transition: font-size 100ms ease;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.app__btn :hover{
-    font-size: 1.1rem;
+.app__btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
 
+.app__btn:active{
+    transform: translateY(0);
 }
 
 .app__phrase{
     font-weight: 300;
+    margin: 0 0 1em 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2d3748;
+    text-align: center;
+    quotes: """ """ "'" "'";
 }
 
-@media (min-width: 500px) {
-    h1{
-        color: red;
+.app__phrase::before{
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.3em;
+    color: #667eea;
+}
+
+.app__phrase::after{
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-left: 0.1em;
+    vertical-align: -0.3em;
+    color: #667eea;
+}
+
+.app__author{
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+    color: #667eea;
+    font-size: 0.95rem;
+    margin-top: 1.5em;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .app__tittle{
+        font-size: 2rem;
+        top: 10%;
     }
-    
+
+    .app__card{
+        margin: 0 1rem;
+        padding: 1.2em 1.5em;
+    }
+
+    .app__phrase{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .app__tittle{
+        font-size: 1.5rem;
+        top: 8%;
+    }
+
+    .app__card{
+        padding: 1em 1.2em;
+    }
+
+    .app__phrase{
+        font-size: 1rem;
+    }
+
+    .app__btn{
+        padding: 0.7em 1.5em;
+        font-size: 0.95rem;
+    }
 }
